@@ -1,0 +1,25 @@
+.MovieComponent {
+    height: 380px;
+    width: 256px;
+    border-radius: 16px;
+    color: #000000;
+}
+.MovieComponent:nth-child(4n+0){
+    margin-right: 0;
+}
+.Picture{
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 16px;
+    border-color: solid transparent;
+    overflow: hidden;
+}
+.MovieName{
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.MovieDate{
+    color: #888888;
+}

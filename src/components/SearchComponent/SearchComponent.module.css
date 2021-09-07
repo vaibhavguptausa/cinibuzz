@@ -1,0 +1,40 @@
+.SearchComponent{
+    position: relative;
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.SearchComponent span {
+    position: absolute;
+    padding: 0;
+    left: 21px;
+    top: 16px;
+    opacity: 0.54;
+}
+
+.SearchComponent input {
+    position: relative;
+    padding: 18px 18px 18px 63px;
+    border-radius: 12px;
+    flex-grow: 1;
+    border-color: transparent;
+    background: #FFFFFF;
+    width: 100%;
+    border-width: 0;
+}
+
+.SearchComponent .SearchButton {
+    background: rgba(104, 85, 214, 0.54);
+    border-radius: 12px;
+    margin-left: 20px;
+    width: 166px;
+    color: #FFFFFF;
+    border-width: 0px;
+}
+.SearchContainer{
+    width: 100%;
+    line-height: 19px;
+    font-size: 16px;
+}

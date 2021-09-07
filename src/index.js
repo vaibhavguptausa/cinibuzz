@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WebFont from 'webfontloader';
 
+WebFont.load({
+   google: {
+     families: ['Inter', 'sans-serif']
+   }
+});
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App></App>
   </React.StrictMode>,
   document.getElementById('root')
 );

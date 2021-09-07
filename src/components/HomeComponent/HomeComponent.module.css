@@ -1,0 +1,58 @@
+.HomeComponent {
+    padding: 0 178px;
+    font-family: Inter;
+}
+.SearchBox{
+    padding: 100px 90px;
+    background-color: #F2F1F8;
+    margin-bottom: 137px;
+    border-radius: 16px;
+}
+.BoxTitle{
+    font-size: 40px;
+    line-height: 48px;
+    color: #000000;
+}
+.SearchBox .BoxTitle{
+    margin-bottom: 70px;
+}
+.HomeComponent .BoxTitle{
+    text-align: left;
+    margin-bottom: 59px;
+}
+.BoxTitle2{
+    font-weight: bolder;
+}
+.HomeComponent .buttonGroup{
+    background: transparent;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 56px;
+}
+.HomeComponent .buttonGroup button{
+    background-color: transparent;
+    color: #000000;
+    opacity: 0.54;
+    text-transform: none;
+    line-height: 24px;
+    font-size: 20px;
+    padding: 16px 18px;
+    height: auto;
+    border-radius: 8px!important;
+    white-space: nowrap;
+}
+
+:global(.active) {
+    background: #F7F7F7!important;
+    opacity: 1!important;
+}
+.MovieTiles{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(256px,1fr));
+    grid-auto-rows: 530px;
+}
+.MovieTiles:nth-child(4n+0){
+    margin-right: 0;
+}
