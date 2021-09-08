@@ -38,3 +38,14 @@
     line-height: 19px;
     font-size: 16px;
 }
+@media only screen and (max-width: 800px){
+    .SearchComponent{
+        flex-direction: column;
+    }
+    .SearchContainer{
+        margin-bottom: 20px;
+    }
+    .SearchComponent .SearchButton{
+        margin: 0 auto;
+    }
+}
