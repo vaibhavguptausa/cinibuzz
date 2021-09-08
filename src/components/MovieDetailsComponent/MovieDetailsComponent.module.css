@@ -24,6 +24,7 @@
     font-size: 40px;
     line-height: 48px;
     font-weight: 600;
+    max-width: 700px;
 }
 .UserRating{
     color: #ffffff;
@@ -65,4 +66,55 @@
 .Overview{
     margin-bottom: 24px;
     max-width: 716px;
+}
+.CastProfilePic{
+    border-radius: 16px;
+    width: 256px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.contentRow2, .contentRow3{
+    position: relative;
+    margin-bottom: 67px;
+}
+.CaraouselContainer{
+    position: relative;
+}
+.prevButton, .nextButton{
+    background: transparent;
+    border: none;
+    height: 24px;
+    width: 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.prevButton.disable, .nextButton.disable{
+    opacity: 0.5;
+}
+.prevButton{
+    background-image: url("../../assets/left-arrow.svg");
+}
+.nextButton{
+    background-image: url("../../assets//right-arrow.svg");
+}
+.carousel-button-group{
+    position: absolute;
+}
+.buttonGroup{
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+.Line{
+    width: 100%;
+    height: 0px;
+    border: 1px solid #F2F1F8;
+    margin-top: 46px;
+    margin-bottom: 51px;
+}
+.contenrRow2Header{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 26px;
 }

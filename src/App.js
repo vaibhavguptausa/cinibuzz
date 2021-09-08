@@ -15,8 +15,8 @@ function App() {
       <HeaderComponent/>
       <Route exact path="/"><HomeComponent/></Route>
       <Route path='/movies'><HomeComponent/></Route>
-      <Route path='/tvshows'>Work in Progress</Route>
-      <Route path='/kids'>Kids are stupid</Route>
+      <Route path='/tvshows'>Needs small manipulations and we can reuse movie page for this...</Route>
+      <Route path='/kids'>we can check for adult key value in responses to filter for kids, they are stupid they will not find that out </Route>
       <Route path='/movie/:id'><MovieDetailsComponent/></Route>
     </Router>
   );

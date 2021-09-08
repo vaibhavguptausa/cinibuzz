@@ -4,7 +4,6 @@ import styles from './SearchComponent.module.css';
 const SearchComponent = (props) => {
     const handleClick = (event)=>{
         props.onSearch(event.target.value);
-        console.log("search", event.target.value);
     }
 
     return (

@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import React, { useEffect, useState } from 'react';
+import { debounce, set } from 'lodash';
+import React, { useCallback, useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Link } from 'react-router-dom';
 import { getGenres, getLatest, getMovieByCategory, getUpcoming, search } from '../../services/MovieService';
@@ -56,17 +57,24 @@ const HomeComponent = () => {
   const handleUpcoming = () => {
     getUpcoming({ page: page }, setCategoryMovieList);
   }
+  const handlerDebounce = useCallback(debounce((a,b)=>search(a,b), 1000), []);
   const handleSearch = (event) => {
     setKeyWord(event);
     if(event===""){
+      setCategory('');
       setIsSearchResult(false);
     }
     else{
       setIsSearchResult(true);
       setKeyword(event);
-      search({ page: page, query: event }, setCategoryMovieList);
+      handlerDebounce({ page: page, query: event }, setCategoryMovieList)
     }
   }
+
+  useEffect(()=>{
+    getMovieByCategory(Endpoints.discover, { page: page, with_genres: getGenreId(Categories[category]) }, (res) => { setCategoryMovieList(movies => [...res]) });
+  },[category])
+
   useEffect(() => {
     getGenres(setGenres);
     getMovieByCategory(Endpoints.discover, { page: page, with_genres: getGenreId(Categories[DefaultGenre]) }, (res) => { setCategoryMovieList(movies => [...res]) });
@@ -79,7 +87,6 @@ const HomeComponent = () => {
   const loadMoreItems = () => {
     getMovieByCategory(Endpoints.discover, { page: page + 1, with_genres: genreId }, (res) => {
       setCategoryMovieList((movies => movies?.concat(res)));
-      console.log(categoryMovieList);
       setPage((page) => page + 1);
       toggleHasMore(res);
     });
@@ -101,7 +108,7 @@ const HomeComponent = () => {
               <div className={`${styles.buttonGroup} btn-group`} role="group" aria-label="Basic example">
                 {
                   Object.keys(Categories).map((item, ind) => <button type="button" key={item + '-' + ind} onClick={handleCategoryClick} className={clsx("btn btn-secondary", {
-                    'active': (item === DefaultGenre) && !isSearchResult
+                    'active': (item === category) && !isSearchResult
                   })} id={item} name={item}>{Categories[item]}</button>)
                 }
               </div>

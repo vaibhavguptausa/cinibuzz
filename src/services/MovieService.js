@@ -58,7 +58,6 @@ export const getMovieDetails=(id,callBack)=>{
     axios.get(`${BaseUrl}3/movie/${id}?api_key=${API_KEY}`)
     .then((res)=>{
         details= res.data;
-        console.log("data",res.data)
         callBack(res.data);
     })
     return details;
@@ -71,4 +70,12 @@ export const getCredits=(id, callBack)=>{
         callBack(res.data);
     })
     return credits;
+}
+export const getRecommendations =(id,callBack)=>{
+    let rec;
+    axios.get(`${BaseUrl}3/movie/${id}/recommendations?api_key=${API_KEY}`)
+    .then((res)=>{
+        rec = res.data.results;
+        callBack(res.data.results);
+    })
 }

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const HeaderComponent = () => (
   <div className={styles.HeaderComponent}>
-    <div className={styles.Cinibuzz}>Cinibuzz</div>
+    <Link to='/'><div className={styles.Cinibuzz}>Cinibuzz</div></Link>
     <ul className={styles.LinkContainer}>
       <li><Link to='/'>Movies</Link></li>
       <li><Link to='/tvshows'>TV Shows</Link></li>
