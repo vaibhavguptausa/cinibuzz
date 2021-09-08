@@ -18,8 +18,8 @@ const MovieDetailsComponent = () => {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2 // optional, default to 1.
+      items: 1,
+      slidesToSlide: 1 // optional, default to 1.
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -86,6 +86,7 @@ const MovieDetailsComponent = () => {
           <div className={styles.RoundPercentage}>{details?.vote_average * 10 + '%'}</div>
         </div>
       </div>
+      <div className={styles.content}>
       <div className={`${styles.ContentRow1} row`}>
         <div className="col-lg-8">
           <div className={styles.Overviewheading}>Overview</div>
@@ -106,6 +107,7 @@ const MovieDetailsComponent = () => {
         </div>
       </div>
       <div className={styles.Line}></div>
+      
       <div className={styles.contentRow2}>
         
         {
@@ -152,7 +154,7 @@ const MovieDetailsComponent = () => {
         }
 
       </div>
-
+      </div>
     </div>
   );
 

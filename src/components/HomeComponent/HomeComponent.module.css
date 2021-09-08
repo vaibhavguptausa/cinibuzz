@@ -29,6 +29,7 @@
     border: none;
     box-shadow: none;
     margin-bottom: 56px;
+    display: flex;
 }
 .HomeComponent .buttonGroup button{
     background-color: transparent;
@@ -56,3 +57,22 @@
 .MovieTiles:nth-child(4n+0){
     margin-right: 0;
 }
+@media only screen and (max-width: 800px) {
+   .HomeComponent{
+       padding: 0;
+   }
+   
+   .HomeComponent .buttonGroup{
+       flex-wrap: wrap;
+   }
+   .MovieTiles{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        grid-auto-rows: 530px;
+    }
+    .MovieSection{
+        padding: 20px;
+    }
+  }
